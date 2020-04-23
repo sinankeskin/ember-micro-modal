@@ -2,12 +2,22 @@
 import { getOwner } from '@ember/application';
 import { assign } from '@ember/polyfills';
 import { action, computed, get } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 import { isPresent } from '@ember/utils';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 
 export default class MicroModalComponent extends Component {
   elementId = guidFor(this);
+
+  @tracked
+  show;
+
+  constructor() {
+    super(...arguments);
+
+    this.show = false;
+  }
 
   @computed
   get config() {
@@ -57,15 +67,21 @@ export default class MicroModalComponent extends Component {
   _initialize() {
     if (this.args.show) {
       MicroModal.show(this.elementId, this.options);
+
+      this.show = true;
     }
   }
 
   @action
   _update() {
-    if (this.args.show) {
+    if (this.args.show && !this.show) {
       MicroModal.show(this.elementId, this.options);
-    } else {
+
+      this.show = true;
+    } else if (!this.args.show && this.show) {
       MicroModal.close(this.elementId);
+
+      this.show = false;
     }
   }
 

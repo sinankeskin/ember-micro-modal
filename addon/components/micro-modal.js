@@ -57,15 +57,15 @@ export default class MicroModalComponent extends Component {
   _initialize() {
     MicroModal.init(this.options);
 
-    if (this.args.show) {
-      MicroModal.show(this.elementId);
-    }
+    this._update();
   }
 
   @action
   _update() {
     if (this.args.show) {
       MicroModal.show(this.elementId);
+    } else {
+      MicroModal.close(this.elementId);
     }
   }
 

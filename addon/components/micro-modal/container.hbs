@@ -1,0 +1,5 @@
+<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="{{@elementId}}-title" ...attributes>
+  {{yield (hash header=(component 'micro-modal/header'))}}
+  {{yield (hash content=(component 'micro-modal/content'))}}
+  {{yield (hash footer=(component 'micro-modal/footer'))}}
+</div>

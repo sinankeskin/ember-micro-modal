@@ -7,10 +7,6 @@
   {{did-update this._update @show}}
 >
   <div class="modal__overlay" tabindex="-1" {{click-to-overlay @clickToOverlay}}>
-    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="{{this.elementId}}-title">
-      {{yield (hash header=(component 'micro-modal/header'))}}
-      {{yield (hash content=(component 'micro-modal/content'))}}
-      {{yield (hash footer=(component 'micro-modal/footer'))}}
-    </div>
+    {{yield (hash container=(component 'micro-modal/container' elementId=this.elementId))}}
   </div>
 </div>

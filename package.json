@@ -1,13 +1,16 @@
 {
   "name": "ember-micro-modal",
   "version": "0.0.9",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember addon for MicroModal modal library.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "modal",
+    "micro modal",
+    "micromodal"
   ],
-  "repository": "",
+  "repository": "https://github.com/sinankeskin/ember-micro-modal",
   "license": "MIT",
-  "author": "",
+  "author": "Sinan Keskin <sinan@kesk.in> (https://kesk.in)",
   "directories": {
     "doc": "doc",
     "test": "tests"

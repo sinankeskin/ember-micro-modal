@@ -7,6 +7,6 @@ module.exports = {
     this._super.included.apply(this, arguments);
 
     app.import('node_modules/micromodal/dist/micromodal.js');
-    app.import('vendor/micromodal.css');
+    // app.import('vendor/micromodal.css');
   },
 };

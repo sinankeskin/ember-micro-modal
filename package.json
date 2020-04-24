@@ -1,6 +1,6 @@
 {
   "name": "ember-micro-modal",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Ember addon for MicroModal modal library.",
   "keywords": [
     "ember-addon",

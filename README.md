@@ -19,7 +19,7 @@ Installation
 ember install ember-micro-modal
 ```
 
-CSS is not included by default. If you want to apply [default styles](https://gist.github.com/ghosh/4f94cf497d7090359a5c9f81caf60699#file-micromodal-css) just include to your ```app.css``` like ```@import 'micro-modal.css'```.
+CSS is not included by default. If you want to apply [default styles](https://gist.github.com/ghosh/4f94cf497d7090359a5c9f81caf60699#file-micromodal-css) just include to your ```app.css``` like ```@import 'micro-modal.css'``` or in scss, less ```@import 'micro-modal'```.
 
 To see [default modal html structure](https://gist.github.com/ghosh/4f94cf497d7090359a5c9f81caf60699#file-micromodal-html).
 

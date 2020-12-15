@@ -1,22 +1,22 @@
 /* globals MicroModal */
-import { getOwner } from '@ember/application';
-import { assign } from '@ember/polyfills';
-import { action, computed, get } from '@ember/object';
-import { isPresent } from '@ember/utils';
-import { guidFor } from '@ember/object/internals';
+
+import { action, get } from '@ember/object';
+
 import Component from '@glimmer/component';
+import { assign } from '@ember/polyfills';
+import { getOwner } from '@ember/application';
+import { guidFor } from '@ember/object/internals';
+import { isPresent } from '@ember/utils';
 
 export default class MicroModalComponent extends Component {
   elementId = guidFor(this);
 
-  @computed
   get config() {
     const _config = getOwner(this).resolveRegistration('config:environment') || {};
 
     return _config['ember-micro-modal'] || {};
   }
 
-  @computed('config')
   get options() {
     const _options = {};
 

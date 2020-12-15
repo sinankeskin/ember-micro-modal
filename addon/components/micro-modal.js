@@ -1,9 +1,9 @@
 /* globals MicroModal */
-
 import { action, get } from '@ember/object';
 
 import Component from '@glimmer/component';
 import { assign } from '@ember/polyfills';
+import { cached } from '@glimmer/tracking';
 import { getOwner } from '@ember/application';
 import { guidFor } from '@ember/object/internals';
 import { isPresent } from '@ember/utils';
@@ -11,21 +11,24 @@ import { isPresent } from '@ember/utils';
 export default class MicroModalComponent extends Component {
   elementId = guidFor(this);
 
+  @cached
   get config() {
     const _config = getOwner(this).resolveRegistration('config:environment') || {};
 
     return _config['ember-micro-modal'] || {};
   }
 
+  @cached
   get options() {
     const _options = {};
 
-    assign(_options, this.config, this.componentOptions());
+    assign(_options, this.config, this.componentOptions);
 
     return _options;
   }
 
-  componentOptions() {
+  @cached
+  get componentOptions() {
     const defaults = [
       'openTrigger',
       'closeTrigger',

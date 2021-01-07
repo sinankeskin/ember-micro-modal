@@ -13,7 +13,8 @@ export default class MicroModalComponent extends Component {
 
   @cached
   get config() {
-    const _config = getOwner(this).resolveRegistration('config:environment') || {};
+    const _config =
+      getOwner(this).resolveRegistration('config:environment') || {};
 
     return _config['ember-micro-modal'] || {};
   }

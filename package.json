@@ -33,11 +33,11 @@
   },
   "dependencies": {
     "@ember/render-modifiers": "^1.0.2",
-    "ember-cached-decorator-polyfill": "^0.1.1",
     "ember-cli-babel": "^7.26.4",
     "ember-cli-htmlbars": "^5.7.1",
     "ember-modifier": "^2.1.1",
-    "micromodal": "^0.4.6"
+    "micromodal": "^0.4.6",
+    "tracked-toolbox": "^1.2.3"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",

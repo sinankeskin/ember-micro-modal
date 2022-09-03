@@ -1,19 +1,16 @@
-ember-micro-modal
-==============================================================================
+# ember-micro-modal
 
 Ember addon for [MicroModal](https://micromodal.now.sh/) modal library.
 
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
 * Ember.js v3.24 or above
 * Ember CLI v3.24 or above
-* Node.js v12 or above
+* Node.js v14 or above
 
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install ember-micro-modal
@@ -47,7 +44,6 @@ ENV["ember-micro-modal"] = {
 There are also 2 parameters. @show and @clickToOverlay.
 @show parameter simply responsible to modal visibility. If value is true modal will be visible.
 @clickToOverlay parameter is responsible to whether modal overlay clickable or not. If value is true overlay click will close the modal.
-
 
 ```handlebars
 <MicroModal @show={{this.show}} @onShow={{fn this.onShow}} @onClose={{fn this.onClose}} as |modal|>
@@ -86,8 +82,44 @@ There are also 2 parameters. @show and @clickToOverlay.
 </button>
 ```
 
+## ```handlebars
+<MicroModal @show={{this.show}} @onShow={{fn this.onShow}} @onClose={{fn this.onClose}} as |modal|>
+  <modal.container class="col-6" as |container|>
+    <container.header class="col">
+      <h2 class="modal__title">
+        Micromodal
+      </h2>
+      <button type="button" class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+    </container.header>
+    <container.content class="col">
+      <p>
+        Try hitting the
+        <code>
+          tab
+        </code>
+        key and notice how the focus stays within the modal itself. Also,
+        <code>
+          esc
+        </code>
+        to close modal.
+      </p>
+    </container.content>
+    <container.footer class="col">
+      <button type="button" class="modal__btn modal__btn-primary">
+        Continue
+      </button>
+      <button type="button" class="modal__btn" aria-label="Close this dialog window" data-micromodal-close>
+        Close
+      </button>
+    </container.footer>
+  </modal.container>
+</MicroModal>
+<button type="button" {{on 'click' this.showModal}}>
+  Show
+</button>
+```
+
 Contributing
-------------------------------------------------------------------------------
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 I'm sorry that i don't have time to write tests. Please report if you find any issue.
@@ -95,7 +127,6 @@ I'm sorry that i don't have time to write tests. Please report if you find any i
 Thanks.
 
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
